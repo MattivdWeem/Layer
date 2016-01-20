@@ -1,5 +1,5 @@
 {
-  "name": "mattivdweem/Layer",
+  "name": "mattivdweem/layer",
   "type": "library",
   "description": "Database abstraction layer and object relationship mapper for php",
   "keywords": ["PHP", "DBAL","ORM"],
