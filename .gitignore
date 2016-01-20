@@ -1,0 +1,8 @@
+index.php
+.env
+.DS_STORE
+vendor
+composer.phar
+storage
+.idea
+*.jpg

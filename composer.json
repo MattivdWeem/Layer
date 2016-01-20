@@ -1,0 +1,27 @@
+{
+  "name": "mattivdweem/Layer",
+  "type": "library",
+  "description": "Database abstraction layer and object relationship mapper for php",
+  "keywords": ["PHP", "DBAL","ORM"],
+  "homepage": "http://github.com/MattivdWeem/Layer",
+  "license" : "MIT",
+  "authors" : [
+    {
+      "name": "Matti van de Weem",
+      "email": "mvdweem@gmail.com",
+      "role": "Developer",
+      "homepage": "http://www.mattivandeweem.nl"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "@stable"
+  },
+  "autoload": {
+    "psr-4": {
+      "MattivdWeem\\Layer\\": "src/"
+    }
+  }
+}
