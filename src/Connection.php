@@ -7,7 +7,7 @@ class Connection {
     /**
      *
      */
-    private $server, $user, $password, $port, $connection;
+    private $server, $user, $database, $password, $port, $connection, $adapter;
 
     public function __construct(
         string $server,
@@ -31,10 +31,12 @@ class Connection {
 
     /**
      * @param mixed $server
+     * @return $this
      */
     public function setServer($server)
     {
         $this->server = $server;
+        return $this;
     }
 
     /**
@@ -47,10 +49,12 @@ class Connection {
 
     /**
      * @param mixed $user
+     * @return $this
      */
     public function setUser($user)
     {
         $this->user = $user;
+        return $this;
     }
 
     /**
@@ -63,10 +67,12 @@ class Connection {
 
     /**
      * @param mixed $password
+     * @return $this
      */
     public function setPassword($password)
     {
         $this->password = $password;
+        return $this;
     }
 
     /**
@@ -79,10 +85,80 @@ class Connection {
 
     /**
      * @param mixed $port
+     * @return $this
      */
     public function setPort($port)
     {
         $this->port = $port;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getConnection()
+    {
+        return $this->connection;
+    }
+
+    /**
+     * @param mixed $connection
+     * @return $this
+     */
+    public function setConnection($connection)
+    {
+        $this->connection = $connection;
+        return $this;
+    }
+
+    /**
+     * @return $this
+     */
+    public function connect(){
+
+        $adapter = $this->adapter.'\Connect';
+        $connectionAdapter = new $adapter;
+
+        $this->setConnection(
+            $connectionAdapter->connect($this)
+        );
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAdapter()
+    {
+        return $this->adapter;
+    }
+
+    /**
+     * @param mixed $adapter
+     * @return $this
+     */
+    public function setAdapter($adapter)
+    {
+        $this->adapter = $adapter;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDatabase()
+    {
+        return $this->database;
+    }
+
+    /**
+     * @param mixed $database
+     * @return $this
+     */
+    public function setDatabase($database)
+    {
+        $this->database = $database;
+        return $this;
     }
 
 }

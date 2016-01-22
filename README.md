@@ -26,6 +26,31 @@ DBAL/ORM for PHP7
 ## php example
 
 
+    <?php
+
+    /**
+
+     */
+
+    declare(strict_types=1);
+    require('vendor/autoload.php');
+
+    $connection = new MattivdWeem\Layer\Connection(
+        '192.168.99.100',
+        'root',
+        'password',
+        3306
+    );
+
+    $connection
+        ->setAdapter('\MattivdWeem\Layer\Adapters\PDO')
+        ->setDatabase('simpleDatabase')
+        ->connect();
+
+
+    print_r($connection);
+
+
 
 
 
