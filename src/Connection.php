@@ -7,7 +7,8 @@ class Connection {
     /**
      *
      */
-    private $server, $user, $database, $password, $port, $connection, $adapter;
+    private $server, $user, $database, $password, $port, $connection;
+    private $adapter = '\MattivdWeem\Layer\Adapters\PDO';
 
     public function __construct(
         string $server,

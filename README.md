@@ -43,7 +43,7 @@ DBAL/ORM for PHP7
     );
 
     $connection
-        ->setAdapter('\MattivdWeem\Layer\Adapters\PDO')
+        //->setAdapter('\MattivdWeem\Layer\Adapters\PDO')
         ->setDatabase('simpleDatabase')
         ->connect();
 
