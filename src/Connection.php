@@ -2,8 +2,8 @@
 
 namespace MattivdWeem\Layer;
 
-class Connection {
-
+class Connection
+{
     /**
      *
      */
@@ -15,7 +15,7 @@ class Connection {
         string $user,
         string $password,
         int $port = 3306
-    ){
+    ) {
         $this->setServer($server);
         $this->setUser($user);
         $this->setPassword($password);
@@ -32,11 +32,13 @@ class Connection {
 
     /**
      * @param mixed $server
+     *
      * @return $this
      */
     public function setServer($server)
     {
         $this->server = $server;
+
         return $this;
     }
 
@@ -50,11 +52,13 @@ class Connection {
 
     /**
      * @param mixed $user
+     *
      * @return $this
      */
     public function setUser($user)
     {
         $this->user = $user;
+
         return $this;
     }
 
@@ -68,11 +72,13 @@ class Connection {
 
     /**
      * @param mixed $password
+     *
      * @return $this
      */
     public function setPassword($password)
     {
         $this->password = $password;
+
         return $this;
     }
 
@@ -86,11 +92,13 @@ class Connection {
 
     /**
      * @param mixed $port
+     *
      * @return $this
      */
     public function setPort($port)
     {
         $this->port = $port;
+
         return $this;
     }
 
@@ -104,25 +112,28 @@ class Connection {
 
     /**
      * @param mixed $connection
+     *
      * @return $this
      */
     public function setConnection($connection)
     {
         $this->connection = $connection;
+
         return $this;
     }
 
     /**
      * @return $this
      */
-    public function connect(){
-
+    public function connect()
+    {
         $adapter = $this->adapter.'\Connect';
-        $connectionAdapter = new $adapter;
+        $connectionAdapter = new $adapter();
 
         $this->setConnection(
             $connectionAdapter->connect($this)
         );
+
         return $this;
     }
 
@@ -136,11 +147,13 @@ class Connection {
 
     /**
      * @param mixed $adapter
+     *
      * @return $this
      */
     public function setAdapter($adapter)
     {
         $this->adapter = $adapter;
+
         return $this;
     }
 
@@ -154,12 +167,13 @@ class Connection {
 
     /**
      * @param mixed $database
+     *
      * @return $this
      */
     public function setDatabase($database)
     {
         $this->database = $database;
+
         return $this;
     }
-
 }

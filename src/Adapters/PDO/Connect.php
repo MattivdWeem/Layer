@@ -5,14 +5,11 @@ namespace MattivdWeem\Layer\Adapters\PDO;
 use MattivdWeem\Layer\Adapters\ConnectInterface;
 use MattivdWeem\Layer\Connection;
 
-class Connect implements ConnectInterface{
-
-
-    public function connect
-    (
+class Connect implements ConnectInterface
+{
+    public function connect(
         Connection $connection
-    )
-    {
+    ) {
         try {
             $con = new \PDO(
                 'mysql:host='.$connection->getServer().':'.$connection->getPort().
@@ -20,11 +17,10 @@ class Connect implements ConnectInterface{
                 $connection->getUser(),
                 $connection->getPassword()
             );
+
             return $con;
         } catch (PDOException $e) {
             throw $e;
         }
     }
-
-
 }
